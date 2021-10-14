@@ -2,7 +2,7 @@ import os
 import yagmail as yagmail
 from flask import Flask,request
 from flask.templating import render_template
-from forms import FormCreateUser
+from forms import FormCreateUser,FormContact
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def index():
 
 @app.route("/user/",methods={"GET","POST"})
 def user():
-    if request.method == "GET":
+    if request.method == "POST":
         formulario = FormCreateUser()
         return render_template('user.html',form = formulario)
     else:
@@ -37,5 +37,14 @@ def provider():
 
 @app.route("/contact/",methods={"GET","POST"})
 def contact():
-    return render_template('contact.html')
-
+    if request.method == "GET":
+        formulario = FormContact()
+        return render_template('contact.html',form = formulario)
+    else:
+        formulario = FormContact(request.form)
+        if formulario.validate_on_submit():
+            yag = yagmail.SMTP('alertasmisiontic2022@gmail.com','prueba123')
+            yag.send(to=formulario.correo.data,subject="Su mensaje ha sido recibido",contents="Hola {0}, hemos recibido tu mensaje, pronto nos contactaremos contigo.".format(formulario.nombre.data))
+            return render_template('contact.html',form = FormContact(), errores="Su mensaje ha sido enviado con éxito.")
+            
+        return render_template('contact.html',form = formulario, errores="Todos los datos son obligatorios.")

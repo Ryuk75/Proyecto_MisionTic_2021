@@ -12,6 +12,14 @@
             {{ form.correo(class="control") }}
         </div>
         <div class="grupo">
+            {{ form.contraseña.label }}
+            {{ form.contraseña(class="control") }}
+        </div>
+        <div class="grupo">
+            {{ form.tipoUsuario.label }}
+            {{ form.tipoUsuario(class="control") }}
+        </div>
+        <div class="grupo">
             {{ form.enviar(class="boton") }}
         </div>
         <div class="mensaje">
