@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+
+body{
+    margin: 0px;
+    font-family: Lato', sans-serif;
+}
+
+.bar-nav{
+    max-height: 3em;
+    height: 3em;
+    background-color: rgb(61,99,172);
+    margin: 0px;
+    border-bottom: solid 1pm #ccc ;
+    padding-top: 1em;
+    color: #f0f0f0;
+}
+
+.title-bar{
+    width: fit-content;
+    display: inline;
+    margin-left: 1em;
+    margin-top: 0px;
+}
+
+.option-bar{
+    float: right;
+    height: 100%;
+    padding-right: 1.5em;
+    width: fit-content;
+    display: inline;
+}
+
+.option-bar a{
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+.containerF{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 80%;
+    padding-top: 2em;
+}
+
+.encabezado{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.control{
+    border: 1px solid rgb(61,99,172);
+    border-radius: 5px;
+    width: 100%;
+    line-height: 30px;
+}
+
+.boton{
+    border-style: none;
+    background-color: rgb(61,99,172);
+    color: #f0f0f0;
+    width: 100%;
+    border-radius: 5px;
+    line-height: 30px;
+}
+
+.formulario{
+    border: 2px solid rgb(61,99,172);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.grupo{
+    margin-bottom: 1rem;
+}
+
+.formulario label{
+    font-weight: bold;
+}
