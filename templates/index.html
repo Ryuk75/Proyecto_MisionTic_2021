@@ -16,10 +16,19 @@
         <div class="option-bar">
             <a href="{{ url_for('index') }}">Index</a>
         </div>
+        <div class="option-bar">
+            <a href="{{ url_for('product') }}">Products</a>
+        </div>
+        <div class="option-bar">
+            <a href="{{ url_for('provider') }}">Providers</a>
+        </div>
+        <div class="option-bar">
+            <a href="{{ url_for('contact') }}">Contact Us</a> 
+        </div>
     </div>
     <div class="containerF">
         <div class="encabezado">
-            <img src="{{ url_for('static',filename='img/logo.png') }}" alt="logo">
+            <img class="logoImg"src="{{ url_for('static',filename='img/logo.png') }}" alt="logo">
         </div>
         {% block contenido %}
         {% endblock %}

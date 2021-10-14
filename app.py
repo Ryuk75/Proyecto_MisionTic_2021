@@ -26,3 +26,16 @@ def user():
             return render_template('user.html',form = FormCreateUser(), errores="Su usuario a sido creado con éxito.")
             
         return render_template('user.html',form = formulario, errores="Todos los datos son obligatorios.")
+
+@app.route("/product/",methods={"GET","POST"})
+def product():
+    return render_template('product.html')
+    
+@app.route("/provider/",methods={"GET","POST"})
+def provider():
+    return render_template('provider.html')
+
+@app.route("/contact/",methods={"GET","POST"})
+def contact():
+    return render_template('contact.html')
+
